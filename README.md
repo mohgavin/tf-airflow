@@ -1,6 +1,6 @@
 # Terraform Airflow Config
 
-This is a Terraform module for managing configuration at Apache Airflow. You can use this module both for commercial or non-commercial purposes.
+This is a Terraform module for managing configuration at Apache Airflow. I create this to ease my work
 
 Currently, you can manage these resources in Airflow by using this module:
 
@@ -11,7 +11,6 @@ Currently, you can manage these resources in Airflow by using this module:
 Tested in:
 
 - Apache Airflow ✅
-- Astronomer ❌
 
 ## A. Prerequisites
 
@@ -24,7 +23,7 @@ Requirements:
 - Airflow username -> `TF_VAR_airflow_username`
 - Airflow password -> `TF_VAR_airflow_password`
 
-## B. How to use this module for your Terraform project ?
+## B. To use this in teraform code ?
 
 - Copy `example` project from this module. You can extend it as per your requirements
 - Configure Airflow hostname by modifying the `providers.tf`. For example `http://localhost:8080/`
@@ -94,12 +93,7 @@ airflow_connections = [
     }
   }
 ]
- ```
 
-- Adjust the tfvars based on your requirements. The tfvars above is just example. Then, Save it
-- Run these commands:
-
-```
 $ terraform init
 $ terraform plan
 ```
@@ -390,22 +384,3 @@ I am trying to follow these approaches for ensuring quality of the tf-module:
 - **tests**, ensure my Terraform module is processing correct variables and yield expected outputs
 - **security**, ensure my Terraform module is free from CVE and stay compliance
 - **automation**, run all above steps by using automation tool to improve development time and keep best quality before or after merging to Git repository
-
-
-The tools:
-
-- [terraform validate](https://developer.hashicorp.com/terraform/cli/commands)
-- [terraform fmt](https://developer.hashicorp.com/terraform/cli/commands)
-- [tflint](https://github.com/terraform-lint48ers/tflint)
-- [terraform tests](https://developer.hashicorp.com/terraform/language/tests)
-- [tfsec](https://github.com/aquasecurity/tfsec)
-- [Pre-commit](https://pre-commit.com/)
-- Github Action [Setup Terraform pipeline](https://github.com/hashicorp/setup-terraform)
-
-## E. How to contribute ?
-
-If you find any issue, you can raise it here at our [Issue Tracker](https://github.com/ridwanbejo/terraform-airflow-config/issues)
-
-If you have something that you want to merge to this repo, just raise [Pull Requests](https://github.com/ridwanbejo/terraform-airflow-config/pulls)
-
-Ensure that you install all the tools from section D. for development purpose.
